@@ -10,6 +10,9 @@
 		93A54D541FDB48E800D6C6DE /* NDIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A54D4A1FDB48E800D6C6DE /* NDIKit.framework */; };
 		93A54D591FDB48E800D6C6DE /* NDIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A54D581FDB48E800D6C6DE /* NDIKitTests.swift */; };
 		93A54D5B1FDB48E800D6C6DE /* NDIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 93A54D4D1FDB48E800D6C6DE /* NDIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93A54D661FDB4A4100D6C6DE /* wrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 93A54D641FDB4A4100D6C6DE /* wrapper.h */; };
+		93A54D671FDB4A4100D6C6DE /* wrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93A54D651FDB4A4100D6C6DE /* wrapper.mm */; };
+		93A54D6D1FDB50D700D6C6DE /* NewTek NDI SDK in Resources */ = {isa = PBXBuildFile; fileRef = 93A54D6C1FDB50D700D6C6DE /* NewTek NDI SDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		93A54D531FDB48E800D6C6DE /* NDIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NDIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A54D581FDB48E800D6C6DE /* NDIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDIKitTests.swift; sourceTree = "<group>"; };
 		93A54D5A1FDB48E800D6C6DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93A54D641FDB4A4100D6C6DE /* wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wrapper.h; sourceTree = "<group>"; };
+		93A54D651FDB4A4100D6C6DE /* wrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = wrapper.mm; sourceTree = "<group>"; };
+		93A54D6C1FDB50D700D6C6DE /* NewTek NDI SDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "NewTek NDI SDK"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +59,11 @@
 		93A54D401FDB48E800D6C6DE = {
 			isa = PBXGroup;
 			children = (
+				93A54D6C1FDB50D700D6C6DE /* NewTek NDI SDK */,
 				93A54D4C1FDB48E800D6C6DE /* NDIKit */,
 				93A54D571FDB48E800D6C6DE /* NDIKitTests */,
 				93A54D4B1FDB48E800D6C6DE /* Products */,
+				93A54D681FDB4AFC00D6C6DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +79,8 @@
 		93A54D4C1FDB48E800D6C6DE /* NDIKit */ = {
 			isa = PBXGroup;
 			children = (
+				93A54D641FDB4A4100D6C6DE /* wrapper.h */,
+				93A54D651FDB4A4100D6C6DE /* wrapper.mm */,
 				93A54D4D1FDB48E800D6C6DE /* NDIKit.h */,
 				93A54D4E1FDB48E800D6C6DE /* Info.plist */,
 			);
@@ -86,6 +96,13 @@
 			path = NDIKitTests;
 			sourceTree = "<group>";
 		};
+		93A54D681FDB4AFC00D6C6DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -93,6 +110,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A54D661FDB4A4100D6C6DE /* wrapper.h in Headers */,
 				93A54D5B1FDB48E800D6C6DE /* NDIKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A54D6D1FDB50D700D6C6DE /* NewTek NDI SDK in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93A54D671FDB4A4100D6C6DE /* wrapper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,10 +361,11 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
+				HEADER_SEARCH_PATHS = "\"./Newtek NDI SDK/include\"";
 				INFOPLIST_FILE = NDIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.waychill.NDIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = net.keenmedia.NDIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -362,10 +383,11 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
+				HEADER_SEARCH_PATHS = "\"./Newtek NDI SDK/include\"";
 				INFOPLIST_FILE = NDIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.waychill.NDIKit;
+				PRODUCT_BUNDLE_IDENTIFIER = net.keenmedia.NDIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;

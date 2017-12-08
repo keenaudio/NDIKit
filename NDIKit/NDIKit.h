@@ -17,3 +17,4 @@ FOUNDATION_EXPORT const unsigned char NDIKitVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <NDIKit/PublicHeader.h>
 
 
+#import "wrapper.h"
