@@ -17,4 +17,32 @@ FOUNDATION_EXPORT const unsigned char NDIKitVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <NDIKit/PublicHeader.h>
 
 
-#import "wrapper.h"
+#include <Foundation/Foundation.h>
+
+struct NDILib;
+
+@interface NDIWrapper: NSObject {
+    struct NDILib *lib;
+}
+
+- (id) init;
+- (void) dealloc;
+@end
+
+@interface NDISource : NSObject
+
+@property NSString *name;
+@property NSString *ip;
+
+@end
+
+@interface NDIFinder: NSObject {
+    struct NDILib *lib;
+}
+
+- (id) init;
+- (void) find:(void(^)(NDISource *))callback;
+@end
+
+
+//#import "wrapper.h"
